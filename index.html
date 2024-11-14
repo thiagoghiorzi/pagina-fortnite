@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Secciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- Contenedor Principal de la Cuadrícula -->
+    <div class="container">
+        <div class="section" onclick="openSection('info-mejores-spot')">Mejor Spot</div>
+        <div class="section" onclick="openSection('info-loot-ideal')">Loot Ideal</div>
+        <div class="section" onclick="openSection('info-como-mejorar')">Cómo Mejorar</div>
+        <div class="section" onclick="openSection('info-mapas-para-training')">Mapas para Mejorar</div>
+    </div>
+
+    <!-- Overlay para Mostrar Información de Cada Sección -->
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <!-- Botón de Cerrar -->
+            <button class="close-btn" onclick="closeSection()">X</button>
+            
+            <!-- Botón de "Atrás" -->
+            <button class="back-btn" onclick="closeSection()">Atrás</button>
+
+            <!-- Contenido de la Sección "Mejores Spot" -->
+            <div class="info-content" id="info-mejores-spot">
+                <h3>Mejores Spot</h3>
+                <p><img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/10/fortnite-capitulo-2-mejores-lugares-aterrizar.jpg?tf=3840x" style="width: 490px;" ></p>
+            </div>
+
+            <!-- Contenido de la Sección "Loot Ideal" -->
+            <div class="info-content" id="info-loot-ideal">
+                <h3>Loot Ideal</h3>
+                <p><img src="img/{C0012A37-D800-42D4-8033-5BFEFF4A2120}.png"></p>
+                <p><img src="img/{51C29229-3CEC-4E59-9701-490E54E8FE91}.png" alt=""></p>
+            </div>
+
+            <!-- Contenido de la Sección "Cómo Mejorar" -->
+            <div class="info-content" id="info-como-mejorar">
+                <h3>Cómo Mejorar</h3>
+                <p>1-Practica la construcción rápida: Aprende a construir paredes, rampas y estructuras defensivas con rapidez para protegerte en combate.</p>
+                <p>2-Mejora tu puntería: Ajusta tu sensibilidad y entrena para ser más preciso, especialmente con armas de largo alcance y escopetas.</p>
+                <p>3-Controla el terreno: Busca estar en áreas elevadas y usa el terreno a tu favor para tener ventaja en los enfrentamientos.</p>
+                <p>4-Gestiona bien los recursos: Asegúrate de tener suficiente madera, piedra y metal para construir y enfrentarte a otros jugadores.</p>
+                <P>5-Juega de forma estratégica: Evalúa cada situación y decide cuándo atacar o cuándo es mejor esperar. La paciencia es clave para sobrevivir más tiempo.                </P>
+
+            <!-- Contenido de la Sección "Mapas para Mejorar" -->
+            <div class="info-content" id="info-mapas-para-training">
+                <h3>Mapas para training</h3>
+                <p>sasasaasasa</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts dentro del HTML -->
+    <script>
+        function openSection(sectionId) {
+            // Muestra el overlay
+            document.getElementById("overlay").style.display = "flex";
+            // Oculta todas las secciones dentro del overlay
+            document.querySelectorAll(".info-content").forEach(section => {
+                section.style.display = "none";
+            });
+            // Muestra solo la sección seleccionada
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+        function closeSection() {
+            // Oculta el overlay
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
